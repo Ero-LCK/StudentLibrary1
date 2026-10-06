@@ -14,7 +14,7 @@ namespace Library
                       set
             {
                 //Check if any incoming char is a digit
-                if (value.Any(char.IsDigit)) 
+                if (!value.Any(char.IsDigit)) 
                 {
                     _title = value;
                 }
