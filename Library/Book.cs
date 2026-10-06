@@ -1,9 +1,3 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Reflection.Emit;
-using System.Text;
-
 namespace Library
 {
     public class Book
@@ -17,7 +11,18 @@ namespace Library
         public string Title
         { 
           get { return _title; }
-            set { _title = value; }
+                      set
+            {
+                //Check if any incoming char is a digit
+                if (value.Any(char.IsDigit)) 
+                {
+                    _title = value;
+                }
+                else
+                {
+                  Console.WriteLine("Cannot enter a number for title");
+                }
+            }
         }
         
         public string Author
